@@ -4,6 +4,8 @@
 
 **every frame of a video, rebuilt out of letters and symbols instead of pixels**
 
+### ▶️ [Watch the live demo](https://shraaaa17.github.io/jungook-ASCIIart/)
+
 </div>
 
 ---
@@ -20,46 +22,49 @@ I first made it for a Jungkook edit 💜, but it isn't limited to that.
 1. 🎞️ the video is read frame by frame
 2. 🌗 each frame is turned into grayscale (light and dark values)
 3. 🔤 every small block of pixels is replaced with a character:
-   dark areas get dense characters, light areas get sparse ones
+   dark areas get denser characters, light areas get sparser ones
 4. 🖥️ the characters are put back together as frames and played as a video
 
 ### 🛠️ built with
-- [Python]
-- [library you used for reading video, e.g. OpenCV]
-- [library for images or output, e.g. Pillow / NumPy]
+- Python
+- [OpenCV](https://opencv.org/) for reading and writing video frames
+- [NumPy](https://numpy.org/) for the per-frame math
+- [Pillow](https://python-pillow.org/) for rendering the character glyphs
+- [FFmpeg](https://ffmpeg.org/) (optional) to re-encode the final MP4 with audio
 
 ### 🚀 how to use
 
 ```bash
 # 1. clone this repo
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/shraaaa17/jungook-ASCIIart.git
+cd jungook-ASCIIart
 
-# 2. install what it needs
-pip install [your requirements]
+# 2. install the dependencies
+pip install opencv-python numpy pillow
 
-# 3. add your video and run
-python [your_script.py] [your_video_file]
+# 3. add your video as input.mp4 and run
+python main.py
 ```
 
-Replace the last line with the real command from your code. Tell people
-where the output is saved.
+The script writes `ascii_hacker_animation.mp4` and then plays it in a
+window. Press **Space** to pause/resume, **Q** or **Esc** to close it.
+
+If `ffmpeg` is installed, the final MP4 keeps the original audio;
+otherwise the silent intermediate `ascii_video_silent.mp4` is used.
 
 ### 🎛️ settings you can change
-- [character set / density]
-- [output width, so more characters give more detail]
-- [colour or black-and-white output]
-
-*(keep only the ones your code actually supports)*
+- `ASCII_CHARS` — which letters and symbols are used
+- `MAX_COLUMNS`, `CELL_WIDTH`, `CELL_HEIGHT` — character grid density
+- `CYAN_TINT`, `GLOW_STRENGTH`, `GLOW_BLUR` — colour and glow
 
 ### 📸 preview
-![preview](preview.gif)
+The generated animation is published on the
+[live demo page](https://shraaaa17.github.io/jungook-ASCIIart/).
 
 ### 📝 note
 This is a fan-made art project, made for learning and fun.
 Videos you convert belong to their original owners, so only use
-videos you have the right to use. I haven't put the original video in
-this repo.
+videos you have the right to use.
 
 ---
 

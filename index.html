@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JUNGKOOK · ASCII Video Art</title>
+  <meta name="description" content="Every frame of a video rebuilt out of letters and symbols.">
+  <style>
+    :root { color-scheme: dark; }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #000;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 18px;
+      font-family: "Consolas", "SFMono-Regular", "DejaVu Sans Mono", monospace;
+      color: #bfefff;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(0.75rem, 2.2vw, 1.05rem);
+      font-weight: 500;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: #d9f6ff;
+      text-shadow: 0 0 12px rgba(120, 225, 255, 0.65);
+    }
+
+    h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      max-height: calc(100vh - 110px);
+      border: 1px solid rgba(120, 225, 255, 0.18);
+      box-shadow: 0 0 40px rgba(70, 195, 255, 0.16);
+      background: #000;
+    }
+
+    video {
+      display: block;
+      max-width: 100%;
+      max-height: calc(100vh - 110px);
+      background: #000;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(191, 239, 255, 0.55);
+    }
+  </style>
+</head>
+<body>
+  <h1><a href="https://github.com/shraaaa17/jungook-ASCIIart">JUNGKOOK · ASCII</a></h1>
+
+  <div class="stage">
+    <video
+      id="ascii-video"
+      src="ascii_hacker_animation.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      controls
+      preload="auto"
+      aria-label="ASCII art video animation"
+    ></video>
+  </div>
+
+  <p>every frame rebuilt out of letters and symbols</p>
+
+  <script>
+    const video = document.getElementById("ascii-video");
+    const tryPlay = () => video.play().catch(() => {});
+    tryPlay();
+    document.addEventListener("visibilitychange", tryPlay);
+  </script>
+</body>
+</html>

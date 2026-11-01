@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.venv/
+venv/
+
+# Intermediate silent render (large); only the final animation is published.
+ascii_video_silent.mp4
